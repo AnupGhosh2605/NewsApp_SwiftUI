@@ -39,8 +39,8 @@ Tried to build an iOS application which can show the latet news of US.
 
 ### Inline Screenshots (Resized and Centered)
 <p align="center">
-  <img src="https://github.com/AnupGhosh2605/NewsApp/blob/3ea371892c39aead5969c83a1fa7c6b4dc44267c/Images/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202025-01-25%20at%2021.09.56.png" alt="App Screenshot 1" width="300">
-  <img src="https://github.com/AnupGhosh2605/NewsApp/blob/3ea371892c39aead5969c83a1fa7c6b4dc44267c/Images/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202025-01-25%20at%2021.12.45.png" alt="App Screenshot 3" width="300">
+  <img src="https://github.com/AnupGhosh2605/NewsApp_SwiftUI/blob/OfflineStorage_newUI/Video_Images/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202025-03-05%20at%2013.42.38.png" alt="App Screenshot 1" width="300">
+  <img src="https://github.com/AnupGhosh2605/NewsApp_SwiftUI/blob/OfflineStorage_newUI/Video_Images/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202025-03-05%20at%2013.43.00.png" alt="App Screenshot 3" width="300">
 
 
 </p>
