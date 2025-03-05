@@ -39,14 +39,14 @@ Tried to build an iOS application which can show the latet news of US.
 
 ### Inline Screenshots (Resized and Centered)
 <p align="center">
-  <img src="https://github.com/AnupGhosh2605/NewsApp_SwiftUI/blob/OfflineStorage_newUI/Video_Images/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202025-03-05%20at%2013.42.38.png" alt="App Screenshot 1" width="300">
-  <img src="https://github.com/AnupGhosh2605/NewsApp_SwiftUI/blob/OfflineStorage_newUI/Video_Images/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202025-03-05%20at%2013.43.00.png" alt="App Screenshot 3" width="300">
+  <img src="https://github.com/AnupGhosh2605/NewsApp_SwiftUI/blob/OfflineStorage_newUI/Images/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202025-03-05%20at%2013.42.38.png" alt="App Screenshot 1" width="300">
+  <img src="https://github.com/AnupGhosh2605/NewsApp_SwiftUI/blob/OfflineStorage_newUI/Images/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202025-03-05%20at%2013.43.00.png" alt="App Screenshot 3" width="300">
 
 
 </p>
 
 <p align="center">
-  <img src="https://github.com/AnupGhosh2605/NewsApp_SwiftUI/blob/OfflineStorage_newUI/Video_Images/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202025-03-05%20at%2013.52.57.png" alt="App Screenshot 4" width="300">
+  <img src="https://github.com/AnupGhosh2605/NewsApp_SwiftUI/blob/OfflineStorage_newUI/Images/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202025-03-05%20at%2013.53.07.png" alt="App Screenshot 4" width="300">
   <img src="https://github.com/AnupGhosh2605/NewsApp_SwiftUI/blob/OfflineStorage_newUI/Images/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202025-03-05%20at%2013.58.05.png" alt="App Screenshot 4" width="300">
 </p>
 
