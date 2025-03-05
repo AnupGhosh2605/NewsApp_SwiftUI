@@ -22,7 +22,6 @@ struct Article: Codable,Identifiable {
     let url: String?
     let urlToImage: String?
     
-    var isBookmarked : Bool = false
     
     enum CodingKeys : String, CodingKey {
         case author, title, description, url, urlToImage

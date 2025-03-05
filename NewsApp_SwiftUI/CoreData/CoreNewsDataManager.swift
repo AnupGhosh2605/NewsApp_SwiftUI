@@ -18,7 +18,6 @@ class CoreNewsDataManager {
      let container : NSPersistentContainer
     
     @Published var newsPublisher : [ArticleEntity]?
-    @Published var bookmarkPublisher : [BookmarkedEntity]?
     
     init() {
         container = NSPersistentContainer(name: "NewsDataContainer")
@@ -42,17 +41,7 @@ class CoreNewsDataManager {
         }
     }
     
-    
-    func FetchBookmarkedDataFromCoreData() {
-        let request : NSFetchRequest<BookmarkedEntity> = NSFetchRequest(entityName: "BookmarkedEntity")
-        
-        do {
-            let res = try container.viewContext.fetch(request)
-            bookmarkPublisher = res
-        } catch {
-            print("Error in downloading data from Core data : \(error)")
-        }
-    }
+
     
     
     func addEntity(article : Article) {
@@ -72,17 +61,6 @@ class CoreNewsDataManager {
     }
     
     
-//    func addBookmarkedEntity(entity : Bookmark) {
-//        if !isIdAlreadyPresent(id: entity.id) {
-//            return
-//        }
-//        let newEntity = BookmarkedEntity(context: container.viewContext)
-//        newEntity.id = entity.id
-//        newEntity.isBookmarked = entity.isBookmarked
-//        
-//        saveData()
-//    }
-    
     func isArticleAlreadyPresent(id : String) -> Bool {
         // Creating the Fetch Request
         let request : NSFetchRequest<ArticleEntity> = NSFetchRequest(entityName: "ArticleEntity")
@@ -99,22 +77,6 @@ class CoreNewsDataManager {
         
     }
     
-//    func isIdAlreadyPresent(id : String) -> Bool {
-//        // Creating the Fetch Request
-//        let request : NSFetchRequest<BookmarkedEntity> = NSFetchRequest(entityName: "BookmarkedEntity")
-//        
-//        // "id == %@" used to fetch records where the id field in ArticleEntity matches the provided id argument.
-//        request.predicate = NSPredicate(format: "id == %@", id)
-//        do {
-//            let count = try container.viewContext.count(for: request)
-//            return count > 0
-//        } catch {
-//            print("Failed to check duplicate :\(error.localizedDescription)")
-//            return false
-//        }
-//        
-//    }
-    
     
     func saveData(){
         do {
@@ -123,11 +85,39 @@ class CoreNewsDataManager {
             concurrentQueue.async {
                 self.FetchNewsFromCoreData()
             }
-            concurrentQueue.async {
-                self.FetchBookmarkedDataFromCoreData()
-            }
+           
         } catch {
             print("Error in saving data to coredata : \(error)")
         }
     }
+    
+    
+    func deleteEntity(id: String) {
+        let request: NSFetchRequest<ArticleEntity> = NSFetchRequest(entityName: "ArticleEntity")
+        request.predicate = NSPredicate(format: "id == %@", id)
+        
+        do {
+            let results = try container.viewContext.fetch(request)
+            for entity in results {
+                container.viewContext.delete(entity)
+            }
+            saveData()  // Save after deletion
+        } catch {
+            print("Error deleting entity: \(error.localizedDescription)")
+        }
+    }
+    
+    func deleteAllEntities() {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = ArticleEntity.fetchRequest()
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try container.viewContext.execute(deleteRequest)
+            saveData()  // Save after deletion
+        } catch {
+            print("Error deleting all entities: \(error.localizedDescription)")
+        }
+    }
+
+
 }

@@ -14,8 +14,8 @@
             filePath = "NewsApp_SwiftUI/ViewModels/NewsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "fetchNewsData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -23,65 +23,97 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4172DE37-7AF6-43A4-A027-687EE63C7DC5"
+            uuid = "4ACF41E2-1BAB-4B08-B793-C165A173A871"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsApp_SwiftUI/ViewModels/NewsViewModel.swift"
+            filePath = "NewsApp_SwiftUI/Components/WebView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "formatNewsData(data:bookmarkData:)"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "saveWebpage()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C0A0DEEC-670C-425C-980F-329F4CAC4DC9"
+            uuid = "5D75FCAC-0378-4FF0-A726-64F8EC0F8226"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsApp_SwiftUI/ViewModels/NewsViewModel.swift"
+            filePath = "NewsApp_SwiftUI/Views/offlineList.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "NewsViewModel"
-            landmarkType = "3">
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "703670E6-A88B-438E-89C8-699E85D03B80"
+            uuid = "E4A356E6-D2A5-4802-B5BC-448F34326496"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsApp_SwiftUI/CoreData/CoreNewsDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "addBookmarkedEntity(entity:)"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "saveData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0CE1ADD9-B914-4A0A-9E47-B2E891ADFB7A"
+            uuid = "A0E46C46-8449-40A6-A550-B332E32488CD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsApp_SwiftUI/CoreData/CoreNewsDataManager.swift"
+            filePath = "NewsApp_SwiftUI/Views/offlineList.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "addBookmarkedEntity(entity:)"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4EDFF778-336E-4594-ACA9-EAC93B543AE2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsApp_SwiftUI/ViewModels/OfflineListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "formatNewsData(data:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0135C699-160B-43EC-AC31-1501E5E35E6A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsApp_SwiftUI/NewsApp_SwiftUIApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -20,40 +20,22 @@ struct NewsListView: View {
             List {
                 if let articles = newsVM.newsData?.articles, !articles.isEmpty {
                     
-                    if let url = URL(string: articles[0].url ?? "") {
-                        NewsListFirstRowView(newsItemData: articles[0])
-                            .onTapGesture {
-                                isLinkActive = true
-                                selectedUrl = url
-                            }
-                    }
+                    NewsListFirstRowView(newsItemData: articles[0])
                     
                     ForEach(articles.dropFirst()) { item in
-                        if let url = URL(string: item.url ?? "") {
-                            NewsListRow(newsItemData: item)
-                                .onTapGesture {
-                                    isLinkActive = true
-                                    selectedUrl = url
-                                }
-                        }
+                        NewsListRow(newsItemData: item, isOfflineData: false)
                     }
                 }
                 
             }
             .listStyle(.plain)
             .navigationBarTitleDisplayMode(.inline)
-            .navigationDestination(isPresented: $isLinkActive) {
-                if let selectedUrl {
-                    WebView(url: selectedUrl)
-                }
-            }
-           
             .navigationTitle(Constants.NavBarTitle)
             
         }
         
         
-       
+        
     }
 }
 

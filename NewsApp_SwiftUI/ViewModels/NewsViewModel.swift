@@ -16,28 +16,19 @@ class NewsViewModel : ObservableObject {
     var coreDataManager : CoreNewsDataManager
     
     @Published var newsData : NewsData?
+    
     private var cancellables  = Set<AnyCancellable>()
 
     var article : Article?
-    var bookmarkedList : [BookmarkedEntity] = []
     
     init(networkService: NetworkServices = NetworkServices.instance,coreDataManager : CoreNewsDataManager = CoreNewsDataManager.instance) {
         self.networkService = networkService
         self.coreDataManager = coreDataManager
-        addSubscriber()
         fetchNewsData()
         
     }
     
-    private func addSubscriber(){
-        Publishers.CombineLatest(coreDataManager.$newsPublisher, coreDataManager.$bookmarkPublisher)
-            .sink { newsData, bookmarkedData in
-                DispatchQueue.main.async {
-                    self.formatNewsData(data: newsData ?? [],bookmarkData : bookmarkedData ?? [])
-                }
-            }
-            .store(in: &cancellables)
-    }
+
     
     // Func to fetch the news data by calling the method from Network Service
     func fetchNewsData() {
@@ -61,10 +52,7 @@ class NewsViewModel : ObservableObject {
                 DispatchQueue.main.async {
                     self.newsData = success
                 }
-                // Adding to core data
-                DispatchQueue.global(qos: .background).async {
-                    self.addNewsDataToCoreData(data: success)
-                }
+
             case .failure(let failure):
                 print("Error decoding data: \(failure)")
                 self.newsData = nil
@@ -96,38 +84,7 @@ class NewsViewModel : ObservableObject {
         }
     }
     
-    private func addNewsDataToCoreData(data : NewsData) {
-        for item in data.articles ?? [] {
-            coreDataManager.addEntity(article: item)
-        }
-    }
-    func formatNewsData(data : [ArticleEntity],bookmarkData : [BookmarkedEntity]){
-     
-        var mappedArticle = data.compactMap { entity -> Article? in
-              let title = entity.title
-              let description = entity.desc
-              let url = entity.url
-              let urlToImage = entity.urlToImage
-              let author = entity.author
-              let id = entity.id
-            
-            
-            let isBookmarked = bookmarkData.first { $0.id == id}?.isBookmarked ?? false
-            return Article(author: author, title: title, description: description, url: url, urlToImage: urlToImage,isBookmarked: isBookmarked)
-            
-        }
-                
-        let news = NewsData(status: "ok", totalResults: mappedArticle.count, articles: mappedArticle)
-        DispatchQueue.main.async {
-            self.newsData = news
-        }
-        
-    }
-    
-//    func toggleBookmark(for id : String, bookmark : Bool) {
-//        coreDataManager.addBookmarkedEntity(entity: Bookmark(id: id,isBookmarked: bookmark))
-//    }
-    
+
 
     
     

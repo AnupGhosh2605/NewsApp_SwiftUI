@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import Network
+
 
 @main
 struct NewsApp_SwiftUIApp: App {
-    var body: some Scene {
-        WindowGroup {
-            NewsListView()
+    @StateObject private var networkMonitor = NetworkMonitor()
+
+        var body: some Scene {
+            WindowGroup {
+                if networkMonitor.isConnected {
+                    NewsListView()
+                } else {
+                    offlineList()
+                }
+            }
         }
-    }
 }

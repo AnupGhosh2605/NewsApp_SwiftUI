@@ -14,11 +14,9 @@ struct NewsListFirstRowView: View {
     @StateObject var newsImageVM : NewsImageViewModel
     @StateObject private var newsVM = NewsViewModel()
     
-    @State var isBookmarked : Bool
     
     init(newsItemData: Article) {
         self.newsItemData = newsItemData
-        self.isBookmarked = newsItemData.isBookmarked
         _newsImageVM = StateObject(wrappedValue: NewsImageViewModel(article: newsItemData))
     }
     
@@ -87,18 +85,7 @@ extension NewsListFirstRowView {
             
             
             Spacer()
-            
-            Button(action: {
-                isBookmarked.toggle()
-//                self.newsVM.toggleBookmark(for: newsItemData.id,bookmark: isBookmarked)
-            }, label: {
-                Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
-                    .resizable()
-                    .frame(width: 15, height: 20)
-                    .foregroundStyle(isBookmarked ? .blue : .primary.opacity(0.7))
-                    .padding()
-            })
-            .buttonStyle(PlainButtonStyle())
+     
             
         }
         .padding(.top)
